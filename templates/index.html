@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News-classifier</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <!-- here we need to display the logo and the name of the site -->
+    <header>
+        <a href="#">
+        <!-- logo has to come here -->
+        <h1 class="logo_name"></h1>
+        </a>
+    </header>
+
+    <!-- this is where we get the input and display the output -->
+    <main>
+        <form action="/post">
+            <input type="text" name="user-input" placeholder="enter your article">
+            <div class="output-display">
+                <!-- here the type of the article has to be displayed based on the users article-->
+                <p>Classified type based on the input</p>
+            </div>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
