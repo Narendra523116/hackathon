@@ -1,20 +1,101 @@
 /* here we have the styles that are related to the  index.html*/
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin:0px;
     padding : 0px;
 }
 
 body{
-    background-color: yellow;
+    /* background-image: url("/static/assets/direction-1076221_1280.jpg"); */
+    background-color: rgb(15, 13, 13);
     height : 100vh;
     width : 100vw;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.heading{
+    text-decoration: none;
+    color : white;
+}
+
+.user{
+    display: flex;
+    width : 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-data{
+    display: flex;
+    height : 40%;
+    width : 40%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border : solid 2px white;
+    border-radius : 2rem;
+
 }
 
 main{
     display: flex;
-    height :  100%;
+    height :  85%;
+    padding-bottom : 1rem;
     justify-content: center;
     align-items: center;
-    border : solid  white 2px ;
+}
+
+.user-input{
+    width : 70%;
+    height : 40px;
+}
+
+.submit{
+    width : 30%;
+}
+
+
+
+.output-display{
+    padding-top : 1rem;
+}
+
+.output{
+    color : white;
+    font-size: 1rem;
+}
+
+
+header{
+    display: flex;
+    padding-top: 0.5rem;
+    padding-left : 2rem;
+    padding-right : 2rem;
+    justify-content: space-between;
+}
+
+.options{
+    display: inline-flex;
+    width : 200px;
+    justify-content: space-around;
+}
+
+.options .btn{
+    width : 80px;
+    font-size:1rem;
+    padding : 0.1rem;
+    height : 30px;
+    border-radius: 2rem;
+    border : grey 1px solid;
+    cursor: pointer;
+}
+
+.options .signup-btn{
+    background-color: black;
+    color :white;
 }

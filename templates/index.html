@@ -9,19 +9,33 @@
 <body>
     <!-- here we need to display the logo and the name of the site -->
     <header>
-        <a href="#">
-        <!-- logo has to come here -->
-        <h1 class="logo_name"></h1>
-        </a>
+        <div class="logo-part">
+            <a href="#" class="heading">
+                <!-- logo has to come here -->
+                <h1 class="logo_name">News classifier</h1>
+            </a>
+        </div>
+
+        <div class="options">
+            <button class="btn login-btn">Login</button>
+            <button class="btn signup-btn">Sign up</button>
+        </div>
+
+
     </header>
 
     <!-- this is where we get the input and display the output -->
     <main>
-        <form action="/post">
-            <input type="text" name="user-input" placeholder="enter your article">
+        <form class="form-data" method="post" action="/predict">
+            <div class="user">
+                <input type="text" class="user-input" name="user-input" placeholder="enter your article">
+                <div class="submit">
+                    <button class="btn">Enter</button>
+                </div>
+            </div>
             <div class="output-display">
                 <!-- here the type of the article has to be displayed based on the users article-->
-                <p>Classified type based on the input</p>
+                <p class="output">Classified type based on the input</p>
             </div>
         </form>
     </main>
