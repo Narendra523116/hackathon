@@ -1,27 +1,32 @@
 from flask import Flask, render_template, request
 import pickle
+import numpy as np
 
 app = Flask(__name__)
 
-# Load your trained model from the pickle file
-with open('model.pkl', 'rb') as file:
-    model = pickle.load(file)
+# Load your trained MultinomialNB model
+with open('path_to_your_model.pkl', 'rb') as model_file:
+    model = pickle.load(model_file)
+
+# Load the correctly fitted vectorizer
+with open('path_to_your_vectorizer.pkl', 'rb') as vectorizer_file:
+    vectorizer = pickle.load(vectorizer_file)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     prediction = None
     if request.method == 'POST':
-        # Get the user's input from the form
         user_input = request.form['user_input']
         
-        # Preprocess the input if needed
-        # For example, if your model requires vectorization or any other preprocessing
-        # Example: user_input_transformed = vectorizer.transform([user_input])
-
-        # Make a prediction using the model
-        prediction = model.predict([user_input])[0]  # Assuming the model expects a list of inputs
+        # Transform the input using the loaded vectorizer
+        user_input_transformed = vectorizer.transform([user_input])
         
-        # Render the template with the prediction
+        # Reshape if necessary
+        user_input_transformed = user_input_transformed.toarray().reshape(1, -1)
+        
+        # Make a prediction using the transformed input
+        prediction = model.predict(user_input_transformed)[0]
+        
         return render_template('index.html', prediction=prediction)
     
     return render_template('index.html', prediction=prediction)
