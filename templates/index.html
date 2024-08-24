@@ -3,44 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News-classifier</title>
-    <link rel="stylesheet" href="/static/css/index.css">
+    <title>News Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-    <!-- here we need to display the logo and the name of the site -->
-    <header>
-        <div class="logo-part">
-            <a href="#" class="heading">
-                <!-- logo has to come here -->
-                <h1 class="logo_name">News classifier</h1>
-            </a>
-        </div>
-
-        <div class="options">
-            <button class="btn login-btn">Login</button>
-            <button class="btn signup-btn">Sign up</button>
-        </div>
-
-
-    </header>
-
-    <!-- this is where we get the input and display the output -->
-    <main>
-        <form class="form-data" method="post" action="/predict">
-            <div class="user">
-                <input type="text" class="user-input" name="user-input" placeholder="enter your article">
-                <div class="submit">
-                    <button class="submit-btn">Enter</button>
+    <!-- Display the logo and the name of the site -->
+    <div class="body-wrapper">
+        <header>
+            <div class="logo-part">
+                <a href="{{ url_for('index') }}" class="heading">
+                    <!-- Logo can be an image or just the name -->
+                    <!-- Example if you have a logo image: -->
+                    <!-- <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo"> -->
+                    <h1 class="logo_name">News Classifier</h1>
+                </a>
+            </div>
+    
+            <div class="options">
+                <a href="#"><button class="btn login-btn">Login</button></a>
+                <a href="#"><button class="btn signup-btn">Sign up</button></a>
+            </div>
+        </header>
+    
+        <!-- This is where we get the input and display the output -->
+        <main>
+            <form class="form-data" method="post">
+                <div class="user">
+                    <div class="user-input">
+                        <input type="text" class="user-input-text" name="user_input" placeholder="Enter your article" required>
+                    </div>
+                    <div class="submit">
+                        <button class="submit-btn" type="submit">Enter</button>
+                    </div>
                 </div>
-            </div>
-            <div class="output-display">
-                <!-- here the type of the article has to be displayed based on the users article-->
-                <p class="output">Classified type based on the input</p>
-            </div>
-        </form>
-    </main>
-    <footer>
-
-    </footer>
+                <div class="output-display">
+                    <!-- Display the classified type based on the user's article -->
+                    {% if prediction %}
+                        <p class="output">Classified type: {{ prediction }}</p>
+                    {% else %}
+                        <p class="output">Classified output based on input</p>
+                    {% endif %}
+                </div>
+            </form>
+        </main>
+    </div>
 </body>
 </html>

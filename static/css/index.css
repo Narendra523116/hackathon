@@ -10,7 +10,7 @@
 body{
     background-image: url("/static/assets/old-newspaper-350376_1280.jpg");
     background-size: cover;
-    /* background-color: rgb(15, 13, 13); */
+    background-color: rgb(15, 13, 13);
     height : 100vh;
     width : 100vw;
     font-family: "Montserrat", sans-serif;
@@ -19,9 +19,31 @@ body{
     font-style: normal;
 }
 
+header {
+    display: flex;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: space-between;
+}
+
+.body-wrapper{
+    height : 100%;
+    width : 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+}
+
 .heading{
     text-decoration: none;
-    color : white;
+    color : rgb(211, 13, 13);
+}
+
+.logo-part .heading .logo_name{
+    transition:all 0.1s ease-in;
+}
+
+.logo_name:hover{
+    color : yellow;
 }
 
 .user{
@@ -52,8 +74,24 @@ main{
 }
 
 .user-input{
-    width : 400px;
+    width : 384px;
     height : 40px;
+    border-radius: 2rem;
+    border: none;
+    overflow: hidden;
+}
+
+.user-input-text{
+    height: 100%;
+    width : 100%;
+    font-size: 1rem;
+    padding-left : 1rem;
+    border-radius: 2rem;
+    border: none;
+}
+
+.user-input-text:focus, .user-input-text{
+    outline: none;
 }
 
 .submit{
@@ -66,9 +104,14 @@ main{
     width : 100%;
     height: 100%;
     font-size: 1rem;
+    transition: all 0.2s ease-in;
+    border-radius: 2rem;
+    border: none;
 }
 
-
+.submit-btn:hover{
+    background-color: yellow;
+}
 
 .output-display{
     padding-top : 1rem;
@@ -76,17 +119,10 @@ main{
 
 .output{
     color : white;
-    font-size: 1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
 }
 
-
-header{
-    display: flex;
-    padding-top: 0.5rem;
-    padding-left : 2rem;
-    padding-right : 2rem;
-    justify-content: space-between;
-}
 
 .options{
     display: inline-flex;
@@ -102,9 +138,17 @@ header{
     border-radius: 2rem;
     border : grey 1px solid;
     cursor: pointer;
+    transition: all 0.1s ease-in;
+    border: none;
 }
 
 .options .signup-btn{
-    background-color: black;
+    background-color: rgb(57, 194, 3);
     color :white;
 }
+
+.options .login-btn{
+    background-color: dodgerblue;
+    color:white;
+}
+
