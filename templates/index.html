@@ -55,4 +55,20 @@
         </footer>
     </div>
 </body>
+<script>
+    $(document).ready(function() {
+        $('#classify-form').on('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            $.ajax({
+                type: 'POST',
+                url: '/',
+                data: $(this).serialize(), // Serialize the form data
+                success: function(response) {
+                    $('#output').text('Classified type: ' + response.prediction);
+                }
+            });
+        });
+    });
+</script>
 </html>
