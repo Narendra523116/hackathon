@@ -35,7 +35,12 @@ header {
 
 .heading{
     text-decoration: none;
-    color : rgb(211, 13, 13);
+    color : white;
+    font-weight: lighter;
+}
+
+.logo_name{
+    font-weight: 500;
 }
 
 .logo-part .heading .logo_name{
@@ -43,7 +48,7 @@ header {
 }
 
 .logo_name:hover{
-    color : yellow;
+    color : rgb(44, 199, 23);
 }
 
 .user{
@@ -107,10 +112,12 @@ main{
     transition: all 0.2s ease-in;
     border-radius: 2rem;
     border: none;
+    background-color: yellow;
 }
 
 .submit-btn:hover{
-    background-color: yellow;
+    background-color: rgb(15, 6, 99);
+    color : white;
 }
 
 .output-display{
@@ -152,3 +159,17 @@ main{
     color:white;
 }
 
+
+footer .footer{
+    text-align: center;
+    color : white;
+    font-weight: bolder;
+
+}
+
+.options ul{
+    list-style: none;
+    display: flex;
+    color: white;
+    gap : 1rem;
+}

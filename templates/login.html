@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Classifier</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{url_for ('static', filename='css/index.css')}}">
 </head>
 <body>
     <!-- Display the logo and the name of the site -->
@@ -15,17 +16,15 @@
                     <!-- Logo can be an image or just the name -->
                     <!-- Example if you have a logo image: -->
                     <!-- <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo"> -->
-                    <h2 class="logo_name">News Classifier</h2>
+                    <h1 class="logo_name">News Classifier</h1>
                 </a>
             </div>
     
             <div class="options">
-                <div class="options">
-                    <ul>
-                        <li>About us</li>
-                        <li>Contact</li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>About us</li>
+                    <li>Contact</li>
+                </ul>
             </div>
         </header>
     
@@ -51,7 +50,7 @@
             </form>
         </main>
         <footer>
-            <p class="footer">All rights are reserved</p>
+            <p class="footer">All rights are reserved for ALPHA BATMAN team</p>
         </footer>
     </div>
 </body>
